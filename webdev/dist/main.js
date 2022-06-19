@@ -14,7 +14,7 @@
 /*!****************!*\
   !*** ./app.js ***!
   \****************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./math.js */ \"./math.js\");\n\nconsole.log(_math_js__WEBPACK_IMPORTED_MODULE_0__.sum(1, 2));\n\n\n//# sourceURL=webpack:///./app.js?");
 
@@ -24,7 +24,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mat
 /*!*****************!*\
   !*** ./math.js ***!
   \*****************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"sum\": () => (/* binding */ sum)\n/* harmony export */ });\nfunction sum(a, b) {\n  return a + b;\n}\n\n\n//# sourceURL=webpack:///./math.js?");
 
