@@ -1,0 +1,10 @@
+body {
+  background-color: rgba(145, 124, 232, 0.9);
+}
+
+body div {
+  background-image: url(bg.png);
+}
+body .small {
+  background-image: url(small.png);
+}
