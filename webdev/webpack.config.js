@@ -1,5 +1,6 @@
 const path = require("path");
 const MyPlugin = require("./myplugin");
+const webpack = require("webpack");
 
 module.exports = {
   mode: "development", // node_modules/.bin/webpack에서의 --mode flag
@@ -44,5 +45,10 @@ module.exports = {
       },
     ],
   },
-  plugins: [new MyPlugin()],
+  plugins: [
+    // new MyPlugin()
+    new webpack.BannerPlugin({
+      banner: "Banner added " + `build on : ${new Date()}`,
+    }),
+  ],
 };
