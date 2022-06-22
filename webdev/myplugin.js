@@ -1,33 +1,19 @@
-const { Compilation, sources } = require("webpack");
+module.exports = function myplugin() {
+  return {
+    visitor: {
+      // Identifier(path) {
+      //   const name = path.node.name;
+      //   console.log("Identifier Name", name);
+      //   path.node.name = name.split("").reverse().join("");
+      // },
+      // https://github.com/babel/babel/blob/master/packages/babel-plugin-transform-block-scoping/src/index.js#L26
+      VariableDeclaration(path) {
+        console.log("VariableDeclaration() kind:", path.node.kind); // const
 
-class MyPlugin {
-  apply(compiler) {
-    compiler.hooks.done.tap("MyPlugin", (stats) => {
-      console.log("MyPlugin: done");
-    });
-    //     compiler.hooks.thisCompilation.tap("MyPlugin", (compilation) => {
-    //       compilation.hooks.processAssets.tap(
-    //         {
-    //           name: "MyPlugin",
-    //           stage: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE,
-    //         },
-    //         () => {
-    //           console.log("compilation", compilation);
-    //           // get the file main.js
-    //           const file = compilation.getAsset("main.js");
-    //           // update main.js with new content
-    //           //   compilation.updateAsset(
-    //           //     "main.js",
-    //           //     new sources.RawSource(file.source.source().replace("a", "b"))
-    //           //   );
-    //           // }
-    //           const banner = ["work it please"];
-    //           return banner + "\n" + file;
-    //         }
-    //       );
-    //     });
-    //   }
-  }
-}
-
-module.exports = MyPlugin;
+        if (path.node.kind === "const") {
+          path.node.kind = "var";
+        }
+      },
+    },
+  };
+};
